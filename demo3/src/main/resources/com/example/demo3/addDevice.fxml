@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.addDeviceController">
+   <children>
+      <DatePicker fx:id="inputDate" layoutX="291.0" layoutY="66.0" prefHeight="25.0" prefWidth="213.0" promptText="Installatie-Datum (AF)" />
+      <CheckBox fx:id="inputGpsB" layoutX="44.0" layoutY="180.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Apparaat heeft GPS?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#addCancel" prefHeight="36.0" prefWidth="88.0" text="Cancel" />
+      <TextField fx:id="intputPlaatsnaam" layoutX="37.0" layoutY="133.0" prefHeight="25.0" prefWidth="213.0" promptText="Plaatsnaam van locatie apparaat" />
+      <TextField fx:id="inputBeschrijving" layoutX="291.0" layoutY="133.0" prefHeight="119.0" prefWidth="234.0" promptText="Beschrijving van Locatie" />
+      <Label layoutX="37.0" layoutY="5.0" prefHeight="36.0" prefWidth="294.0" text="Voeg een Apparaat toe." />
+      <Label layoutX="291.0" layoutY="40.0" prefHeight="17.0" prefWidth="213.0" text="Selecteer een datum van de installatie" />
+      <Label layoutX="37.0" layoutY="41.0" prefHeight="17.0" prefWidth="213.0" text="Kies zelf een apparaat ID" />
+      <TextField fx:id="inputDeviceId" layoutX="37.0" layoutY="66.0" prefHeight="25.0" prefWidth="213.0" promptText="Een getal onder de 2 miljoen." />
+      <Label layoutX="37.0" layoutY="108.0" prefHeight="17.0" prefWidth="234.0" text="Plaatsnaam van de locatie van het apparaat." />
+      <Label layoutX="291.0" layoutY="108.0" prefHeight="17.0" prefWidth="245.0" text="Beschrijving van de locatie van het apparaat." />
+      <Label layoutX="37.0" layoutY="221.0" prefHeight="17.0" prefWidth="44.0" text="GPS Id:" />
+      <TextField fx:id="inputGpsId" layoutX="80.0" layoutY="217.0" prefHeight="25.0" prefWidth="171.0" promptText="0" />
+   </children>
+</AnchorPane>
