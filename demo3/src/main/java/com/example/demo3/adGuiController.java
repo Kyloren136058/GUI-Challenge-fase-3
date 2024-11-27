@@ -42,16 +42,23 @@ public class adGuiController implements Initializable {
     @FXML
     public PasswordField inputPassword;
 
+
+    //check Password string. ---
     @FXML
     public void vergelijk() {
         String inputP = inputPassword.getText();
         String password = "milan";
         if (password.equals(inputP))
-            System.out.println(123);
+            System.out.println("Correct!");
 
         else
-            System.out.println(1);
+            System.out.println("Wrong, please try again.");
 
+    }
+
+    @FXML
+    public void logInPage() throws IOException {
+        adGuiApplication.setRoot("logIn");
     }
 
     Random random = new Random();
@@ -83,7 +90,7 @@ public class adGuiController implements Initializable {
 
     //button add row implemenation with random nr and current date generators
     @FXML
-    void addRow() {
+    public void addRow() {
 
         makeTableCells();
         date = Calendar.getInstance().getTime();
