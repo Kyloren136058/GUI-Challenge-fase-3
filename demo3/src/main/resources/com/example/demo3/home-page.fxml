@@ -33,7 +33,7 @@
     </VBox>
    <AnchorPane prefHeight="317.0" prefWidth="426.0">
       <children>
-         <Button fx:id="adminButton" alignment="CENTER" layoutX="360.0" layoutY="14.0" mnemonicParsing="false" onAction="#addDevice" text="admin" />
+         <Button fx:id="adminButton" alignment="CENTER" layoutX="360.0" layoutY="14.0" mnemonicParsing="false" onAction="#logInPage" text="admin" />
          <Text layoutX="25.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overzicht pagina">
             <font>
                <Font size="16.0" />
@@ -41,8 +41,8 @@
          </Text>
          <Button fx:id="btn1" layoutX="25.0" layoutY="68.0" mnemonicParsing="false" onAction="#onClickFirstBtn" text="Locatie 1" />
          <Button fx:id="btn2" layoutX="25.0" layoutY="93.0" mnemonicParsing="false" onAction="#onClickSecondBtn" text="Locatie 2" />
-         <Button fx:id="btn3" layoutX="25.0" layoutY="118.0" mnemonicParsing="false" onAction="#vergelijk" text="Locatie 3" />
-         <Button fx:id="btn4" layoutX="25.0" layoutY="143.0" mnemonicParsing="false" onAction="#addRow" text="Locatie 4" />
+         <Button fx:id="btn3" layoutX="25.0" layoutY="118.0" mnemonicParsing="false" onAction="#vergelijk" text="Log-in" />
+         <Button fx:id="" layoutX="25.0" layoutY="143.0" mnemonicParsing="false" onAction="#addRow" text="voeg apparaat toe" />
          <Label fx:id="ClickMeLabel" layoutX="144.0" layoutY="72.0" text="Locatie" />
           <Label fx:id="ClickMeLabel2" layoutX="400.0" layoutY="72.0" text="Locatie" />
 

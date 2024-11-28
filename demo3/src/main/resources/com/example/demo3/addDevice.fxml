@@ -13,6 +13,7 @@
          </font>
       </CheckBox>
       <Button layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#addCancel" prefHeight="36.0" prefWidth="88.0" text="Cancel" />
+      <Button fx:id="" layoutX="25.0" layoutY="143.0" mnemonicParsing="false" onAction="#addRow" text="voeg apparaat toe" />
       <TextField fx:id="intputPlaatsnaam" layoutX="37.0" layoutY="133.0" prefHeight="25.0" prefWidth="213.0" promptText="Plaatsnaam van locatie apparaat" />
       <TextField fx:id="inputBeschrijving" layoutX="291.0" layoutY="133.0" prefHeight="119.0" prefWidth="234.0" promptText="Beschrijving van Locatie" />
       <Label layoutX="37.0" layoutY="5.0" prefHeight="36.0" prefWidth="294.0" text="Voeg een Apparaat toe." />
