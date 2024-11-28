@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.addDeviceController">
+<AnchorPane prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.addDeviceController">
    <children>
       <DatePicker fx:id="inputDate" layoutX="291.0" layoutY="66.0" prefHeight="25.0" prefWidth="213.0" promptText="Installatie-Datum (AF)" />
       <CheckBox fx:id="inputGpsB" layoutX="44.0" layoutY="180.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Apparaat heeft GPS?">
@@ -13,7 +13,7 @@
          </font>
       </CheckBox>
       <Button layoutX="25.0" layoutY="339.0" mnemonicParsing="false" onAction="#addCancel" prefHeight="36.0" prefWidth="88.0" text="Cancel" />
-      <Button fx:id="" layoutX="25.0" layoutY="143.0" mnemonicParsing="false" onAction="#addRow" text="voeg apparaat toe" />
+      <Button fx:id="" layoutX="400.0" layoutY="339.0" mnemonicParsing="false" onAction="#addRow" prefHeight="36.0" prefWidth="124.0" text="voeg apparaat toe" />
       <TextField fx:id="intputPlaatsnaam" layoutX="37.0" layoutY="133.0" prefHeight="25.0" prefWidth="213.0" promptText="Plaatsnaam van locatie apparaat" />
       <TextField fx:id="inputBeschrijving" layoutX="291.0" layoutY="133.0" prefHeight="119.0" prefWidth="234.0" promptText="Beschrijving van Locatie" />
       <Label layoutX="37.0" layoutY="5.0" prefHeight="36.0" prefWidth="294.0" text="Voeg een Apparaat toe." />
@@ -25,4 +25,15 @@
       <Label layoutX="37.0" layoutY="221.0" prefHeight="17.0" prefWidth="44.0" text="GPS Id:" />
       <TextField fx:id="inputGpsId" layoutX="80.0" layoutY="217.0" prefHeight="25.0" prefWidth="171.0" promptText="0" />
    </children>
+   <TableView fx:id="adTafel" maxHeight="600.0" maxWidth="1000.0" minHeight="300.0" minWidth="400.0" prefHeight="600.0" prefWidth="442.0">
+      <columns>
+         <TableColumn fx:id="adID" editable="false" prefWidth="100.0" text="DeviceID" />
+         <TableColumn fx:id="installD" prefWidth="140.0" text="InstallDate" />
+         <TableColumn fx:id="locatie" prefWidth="125.0" text="Plaats naam" />
+         <TableColumn fx:id="beschrijving" prefWidth="145.0" text="Beschrijving" />
+         <TableColumn fx:id="stofWaarde" prefWidth="135.0" text="PPM" />
+         <TableColumn fx:id="gps" prefWidth="125.0" text="GPS" />
+         <TableColumn fx:id="gpsId" prefWidth="125.0" text="gps ID" />
+      </columns>
+   </TableView>
 </AnchorPane>

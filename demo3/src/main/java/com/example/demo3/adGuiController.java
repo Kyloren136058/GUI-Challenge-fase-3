@@ -82,6 +82,11 @@ public class adGuiController implements Initializable {
             sqlRow1,sqlRow2,sqlRow3,sqlRow4,sqlRow5,sqlRow6,sqlRow7,sqlRow8, sqlRow9, sqlRow10
     );
 
+    @FXML
+    ObservableList<adApparaat> returnList(){
+        return this.list;
+    }
+
     //addDevice connect to #adminButton > goes to addDevice page
     @FXML
     private void addDevice() throws IOException {
