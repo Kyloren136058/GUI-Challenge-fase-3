@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import jdk.jfr.Period;
 
+import java.awt.event.ActionEvent;
+import java.beans.EventHandler;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -59,6 +61,28 @@ public class adGuiController implements Initializable {
     @FXML
     public void logInPage() throws IOException {
         adGuiApplication.setRoot("logIn");
+    }
+
+
+    //search bar
+    @FXML
+    public TextField searchBar;
+
+    //search btn
+    public void searchBtn() {
+        //user input uit de search bar
+        String inputText = searchBar.getText().toLowerCase();
+
+        //filter lijst gebasseerd op locatie
+        ObservableList<adApparaat> filteredList = FXCollections.observableArrayList();
+        for (adApparaat apparaat : list) {
+            if (apparaat.getLocatie().toLowerCase().contains(inputText)) {
+                filteredList.add(apparaat);
+            }
+        }
+
+        // Update the TableView with the filtered list
+        adTafel.setItems(filteredList);
     }
 
     Random random = new Random();

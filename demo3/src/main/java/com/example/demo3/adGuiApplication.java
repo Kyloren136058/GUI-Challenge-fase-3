@@ -22,12 +22,11 @@ public class adGuiApplication extends Application {
 
         //default sceneStart
         FXMLLoader fxmlLoader = new FXMLLoader(adGuiApplication.class.getResource("home-page.fxml"));
-        scene = new Scene(fxmlLoader.load(),1024 , 816);
+        scene = new Scene(fxmlLoader.load(),800 , 600);
         stage.setTitle("Aqua~Data");
         stage.setScene(scene);
         stage.show();
     }
-
     //pageLoading setRoots
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
