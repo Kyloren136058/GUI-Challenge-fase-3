@@ -37,6 +37,8 @@ public class adGuiController implements Initializable {
     public TableColumn<adApparaat, Boolean> gps;
     @FXML
     public TableColumn<adApparaat, Integer> gpsId;
+    @FXML
+    private Button editRowButton;
 
     @FXML
     private Label welcomeText;
@@ -44,6 +46,9 @@ public class adGuiController implements Initializable {
     @FXML
     public PasswordField inputPassword;
 
+    //knop om row te verwijderen
+    @FXML
+    private Button deleteRowButton;
 
     //check Password string. ---
     @FXML
@@ -115,6 +120,17 @@ public class adGuiController implements Initializable {
     @FXML
     private void addDevice() throws IOException {
         adGuiApplication.setRoot("addDevice");
+    }
+
+    @FXML
+    public void deleteRow() {
+        adApparaat selectedRow = adTafel.getSelectionModel().getSelectedItem();
+        if (selectedRow != null) {
+            list.remove(selectedRow); // Remove from the ObservableList
+            adTafel.setItems(list);  // Update the table
+        } else {
+            System.out.println("No row selected."); // Optional: Add feedback for no selection
+        }
     }
 
     //button add row implemenation with random nr and current date generators

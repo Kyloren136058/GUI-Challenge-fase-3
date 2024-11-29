@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -49,6 +50,8 @@ public class addDeviceController {
     @FXML
     public TableColumn<adApparaat, Integer> gpsId;
 
+
+
     Random random = new Random();
     Date date = new Date();
 
@@ -62,6 +65,9 @@ public class addDeviceController {
     public void obvList() {
         list = gui.returnList();
     }
+
+
+
 
     @FXML
     public void addRow() {
@@ -78,6 +84,7 @@ public class addDeviceController {
         list.add(nieuwApp);
         adTafel.setItems(list);
     }
+
 
     //assure new table cells are applied with data types for new row(s)
     @FXML
