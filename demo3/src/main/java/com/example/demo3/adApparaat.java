@@ -37,6 +37,7 @@ public class adApparaat {
     public boolean getGps() {
         return gps;
     }
+
     public double getStofWaarde() {
         return stofWaarde;
     }

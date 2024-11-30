@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import jdk.jfr.Period;
 
+import java.awt.event.ActionEvent;
+import java.beans.EventHandler;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -35,6 +37,8 @@ public class adGuiController implements Initializable {
     public TableColumn<adApparaat, Boolean> gps;
     @FXML
     public TableColumn<adApparaat, Integer> gpsId;
+    @FXML
+    private Button editRowButton;
 
     @FXML
     private Label welcomeText;
@@ -42,6 +46,9 @@ public class adGuiController implements Initializable {
     @FXML
     public PasswordField inputPassword;
 
+    //knop om row te verwijderen
+    @FXML
+    private Button deleteRowButton;
 
     //check Password string. ---
     @FXML
@@ -59,6 +66,28 @@ public class adGuiController implements Initializable {
     @FXML
     public void logInPage() throws IOException {
         adGuiApplication.setRoot("logIn");
+    }
+
+
+    //search bar
+    @FXML
+    public TextField searchBar;
+
+    //search btn
+    public void searchBtn() {
+        //user input uit de search bar
+        String inputText = searchBar.getText().toLowerCase();
+
+        //filter lijst gebasseerd op locatie
+        ObservableList<adApparaat> filteredList = FXCollections.observableArrayList();
+        for (adApparaat apparaat : list) {
+            if (apparaat.getLocatie().toLowerCase().contains(inputText)) {
+                filteredList.add(apparaat);
+            }
+        }
+
+        // Update the TableView with the filtered list
+        adTafel.setItems(filteredList);
     }
 
     Random random = new Random();
@@ -82,10 +111,26 @@ public class adGuiController implements Initializable {
             sqlRow1,sqlRow2,sqlRow3,sqlRow4,sqlRow5,sqlRow6,sqlRow7,sqlRow8, sqlRow9, sqlRow10
     );
 
+    @FXML
+    ObservableList<adApparaat> returnList(){
+        return this.list;
+    }
+
     //addDevice connect to #adminButton > goes to addDevice page
     @FXML
     private void addDevice() throws IOException {
         adGuiApplication.setRoot("addDevice");
+    }
+
+    @FXML
+    public void deleteRow() {
+        adApparaat selectedRow = adTafel.getSelectionModel().getSelectedItem();
+        if (selectedRow != null) {
+            list.remove(selectedRow); // Remove from the ObservableList
+            adTafel.setItems(list);  // Update the table
+        } else {
+            System.out.println("No row selected."); // Optional: Add feedback for no selection
+        }
     }
 
     //button add row implemenation with random nr and current date generators
