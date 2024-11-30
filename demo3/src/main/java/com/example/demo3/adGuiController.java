@@ -122,6 +122,7 @@ public class adGuiController implements Initializable {
         adGuiApplication.setRoot("addDevice");
     }
 
+    
     @FXML
     public void deleteRow() {
         adApparaat selectedRow = adTafel.getSelectionModel().getSelectedItem();
